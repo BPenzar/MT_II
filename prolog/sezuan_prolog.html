@@ -1,0 +1,1152 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Index</title>
+  <meta name="description" content="A-Frame">
+  <script src="https://aframe.io/releases/0.3.2/aframe.min.js"></script>
+  <script src="https://rawgit.com/ngokevin/aframe-animation-component/master/dist/aframe-animation-component.min.js"></script>
+  <script src="js/main.js"></script>
+</head>
+
+<body>
+<a-scene>
+    <!--Bilder, Texturen, Modelle, etc.-->
+    <!---->
+    <a-assets>
+        <!--Häuser-->
+        <a-asset-item id="house1" src="obj/haus1.obj"></a-asset-item>
+        <a-asset-item id="house2" src="obj/haus2.obj"></a-asset-item>
+        <a-asset-item id="house3" src="obj/haus3.obj"></a-asset-item>
+        <a-asset-item id="house5" src="obj/haus5.obj"></a-asset-item>
+        <a-asset-item id="house6" src="obj/haus6.obj"></a-asset-item>
+        <!--Inventar-->
+        <a-asset-item id="badewanne" src="obj/badewanne.obj"></a-asset-item>
+        <a-asset-item id="bett" src="obj/bett.obj"></a-asset-item>
+        <a-asset-item id="doppelbett" src="obj/doppelbett.obj"></a-asset-item>
+        <a-asset-item id="himmelbett" src="obj/himmelbett.obj"></a-asset-item>
+        <a-asset-item id="hochbett" src="obj/hochbett.obj"></a-asset-item>
+        <a-asset-item id="kamin" src="obj/kamin.obj"></a-asset-item>
+        <a-asset-item id="nachttisch" src="obj/nachttisch.obj"></a-asset-item>
+        <a-asset-item id="ofen" src="obj/ofen.obj"></a-asset-item>
+        <a-asset-item id="regalq" src="obj/regalq.obj"></a-asset-item>
+        <a-asset-item id="regalr" src="obj/regalr.obj"></a-asset-item>
+        <a-asset-item id="schirmlampe" src="obj/schirmlampe.obj"></a-asset-item>
+        <a-asset-item id="schrank" src="obj/schrank.obj"></a-asset-item>
+        <a-asset-item id="stuhl" src="obj/stuhl.obj"></a-asset-item>
+        <a-asset-item id="tisch" src="obj/tisch.obj"></a-asset-item>
+        <a-asset-item id="tischchen" src="obj/tischchen.obj"></a-asset-item>
+        <a-asset-item id="zuber" src="obj/zuber.obj"></a-asset-item>
+        <!--Götter-->
+        <a-asset-item id="gottFigur" src="dae/Gott.dae"></a-asset-item>
+        <!--Wasserträger-->
+        <a-asset-item id="wasserFigur" src="dae/Wassertrager.dae"></a-asset-item>
+        <!--Standard Mann-->
+        <a-asset-item id="standardperson" src="charaktere/Standard Person.dae"></a-asset-item>
+        <!--Standard Frau-->
+        <a-asset-item id="standardfrau" src="charaktere/StandardFrau.dae"></a-asset-item>
+        <!--Shantee -->
+        <a-asset-item id="shantee" src="charaktere/shantee.dae"></a-asset-item>
+        <!--Man Dick-->
+        <a-asset-item id="manndick" src="charaktere/MannDick.dae"></a-asset-item>
+        <!--Person Kniend-->
+        <a-asset-item id="Personkniend" src="charaktere/Standard Person kniend.dae"></a-asset-item>
+        <!--TON-->
+        <!--Ton - Volkan Saz-->
+        <audio id="volkanMusik" src="ton/volkanSaz01.mp3"></audio>
+        <!--Pause-->
+        <audio id="pause" src="ton/stille.mp3"></audio>
+        <!--Ton - Dialoge-->
+        <audio id="introwt11" src="ton/prolog_1_3_1wm1.mp3"></audio>
+        <audio id="introwt12" src="ton/prolog_1_3_2wm2.mp3"></audio>
+        <audio id="introwt13" src="ton/prolog_1_3_3wm3.mp3"></audio>
+        <audio id="introwt14" src="ton/prolog_1_3_4wm4.mp3"></audio>
+        <audio id="introwt15" src="ton/prolog_1_3_5wm5.mp3"></audio>
+        <audio id="introwt16" src="ton/prolog_1_3_6wm6.mp3"></audio>
+        <audio id="introwt17" src="ton/prolog_1_3_7wm7.mp3"></audio>
+        <audio id="introwt18" src="ton/prolog_1_3_8g1.mp3"></audio>
+        <audio id="introwt19" src="ton/prolog_1_3_9wm8.mp3"></audio>
+        <audio id="introwt20" src="ton/prolog_1_3_10_g2.mp3"></audio>
+        <audio id="introwt21" src="ton/prolog_1_3_11wm9.mp3"></audio> <!--'wo wünscht ihr zu wohnen? -->
+        <audio id="introwt22" src="ton/prolog_1_3_12g3.mp3"></audio>
+        <!--Fo's Haus Anfrage-->
+        <audio id="introwt1_4_1" src="ton/prolog_1_4_1wm1.mp3"></audio> <!-- "geduldet euch einen Augenblick""-->
+        <audio id="introwt1_4_2" src="ton/prolog_1_4_2wm2.mp3"></audio><!-- Klopfen und wand hoch Fo's Haus -->
+        <!--Su's Haus Anfrage-->
+        <audio id="introwt1_5_1" src="ton/prolog_1_5_1wm1.mp3"></audio>
+        <audio id="introwt1_5_2" src="ton/prolog_1_5_2wm2.mp3"></audio>
+        <audio id="introwt1_5_3" src="ton/prolog_1_5_3wm3.mp3"></audio>
+        <audio id="introwt1_5_4" src="ton/prolog_1_5_4g1.mp3"></audio>
+        <audio id="introwt1_5_5" src="ton/prolog_1_5_5wm4.mp3"></audio>
+        <audio id="introwt1_5_6" src="ton/prolog_1_5_6g2.mp3"></audio>
+        <audio id="introwt1_5_7" src="ton/prolog_1_5_6g3.mp3"></audio>
+        <!--Tschengs's Haus Anfrage-->
+        <audio id="introwt1_6_0" src="ton/prolog_1_6_0.mp3"></audio>
+        <audio id="introwt1_6_1" src="ton/prolog_1_6_1wm1.mp3"></audio>
+        <audio id="introwt1_6_2" src="ton/prolog_1_6_2wm2.mp3"></audio>
+        <audio id="introwt1_6_3" src="ton/prolog_1_6_7_g.mp3"></audio>
+        <!--Letzes Haus Anfrage-->
+        <audio id="introwt1_7_1" src="ton/prolog_1_7_1wm1.mp3"></audio>
+        <audio id="introwt1_7_2" src="ton/prolog_1_7_2_neu.mp3"></audio>
+        <audio id="introwt1_7_3" src="ton/prolog_1_7_11g10.mp3"></audio>
+        <audio id="introwt1_7_4" src="ton/prolog_1_7_12wm2.mp3"></audio>
+        <!---->
+        <!--SHENTE'S HAUS-->
+        <!-- Wasserträger und Shen Te -->
+        <audio id="introwt1_8_1" src="ton/prolog_1_7_14wm3.mp3"></audio>
+        <audio id="introwt1_8_2" src="ton/prolog_2_1_1wm1.mp3"></audio>
+        <audio id="introwt1_8_3" src="ton/prolog_2_1_3wm2.mp3"></audio>
+        <audio id="introwt1_8_4" src="ton/prolog_2_1_4st1.mp3"></audio>
+        <audio id="introwt1_8_5" src="ton/prolog_2_1_5wm3.mp3"></audio>
+        <audio id="introwt1_8_6" src="ton/prolog_2_1_6st2.mp3"></audio>
+        <audio id="introwt1_8_7" src="ton/prolog_2_1_7wm4.mp3"></audio>
+        <audio id="introwt1_8_8" src="ton/prolog_2_1_8st3.mp3"></audio>
+        <audio id="introwt1_8_9" src="ton/prolog_2_1_9wm5.mp3"></audio>
+        <audio id="introwt1_8_10" src="ton/prolog_2_1_10st4.mp3"></audio>
+        <audio id="introwt1_8_11" src="ton/prolog_2_1_11wm6.mp3"></audio>
+        <audio id="introwt1_8_12" src="ton/prolog_2_1_12st5.mp3"></audio>
+
+        <!--Wasserträger und Götter-->
+        <audio id="introwt1_9_1" src="ton/prolog_2_2_1g1.mp3"></audio>
+        <audio id="introwt1_9_2" src="ton/prolog_2_2_2wm1.mp3"></audio>
+        <audio id="introwt1_9_3" src="ton/prolog_2_2_3g2.mp3"></audio>
+        <audio id="introwt1_9_4" src="ton/prolog_2_2_4wm2.mp3"></audio>
+        <audio id="introwt1_9_5" src="ton/prolog_2_2_5g2.mp3"></audio>
+        <audio id="introwt1_9_6" src="ton/prolog_2_2_6wm3.mp3"></audio>
+        <audio id="introwt1_9_7" src="ton/prolog_2_2_7g4.mp3"></audio>
+        <audio id="introwt1_9_8" src="ton/prolog_2_2_8wm4.mp3"></audio>
+        <audio id="introwt1_9_9" src="ton/prolog_2_2_9g5.mp3"></audio>
+        <audio id="introwt1_9_10" src="ton/prolog_2_2_10wm5.mp3"></audio>
+        <audio id="introwt1_9_11" src="ton/prolog_2_2_11g6.mp3"></audio>
+        <audio id="introwt1_9_12" src="ton/prolog_2_2_12g7.mp3"></audio>
+
+        <audio id="introwt1_10_1" src="ton/prolog_2_3_1wm1.mp3"></audio>
+        <audio id="introwt1_10_2" src="ton/prolog_2_3_2wm2.mp3"></audio>
+        <audio id="introwt1_10_3" src="ton/prolog_2_3_3g1.mp3"></audio>
+        <audio id="introwt1_10_4" src="ton/prolog_2_3_4wm3.mp3"></audio>
+        <audio id="introwt1_10_5" src="ton/prolog_2_3_5g2.mp3"></audio>
+        <audio id="introwt1_10_6" src="ton/prolog_2_3_6wm4.mp3"></audio>
+        <audio id="introwt1_10_7" src="ton/prolog_2_3_7g3.mp3"></audio>
+        <audio id="introwt1_10_8" src="ton/prolog_2_3_8wm5.mp3"></audio>
+        <audio id="introwt1_10_9" src="ton/prolog_2_3_9f1.mp3"></audio>
+        <audio id="introwt1_10_10" src="ton/prolog_2_3_10f1.mp3"></audio>
+        <audio id="introwt1_10_11" src="ton/prolog_2_3_11f3.mp3"></audio>
+        <audio id="introwt1_10_12" src="ton/prolog_2_3_12f4.mp3"></audio>
+        <audio id="introwt1_10_13" src="ton/prolog_2_3_13g4.mp3"></audio>
+        <audio id="introwt1_10_14" src="ton/prolog_2_3_14wm6.mp3"></audio>
+        <audio id="introwt1_10_15" src="ton/prolog_2_3_15wm7.mp3"></audio>
+        <audio id="introwt1_10_16" src="ton/prolog_2_3_15wm7_1.mp3"></audio>
+        <audio id="introwt1_10_17" src="ton/prolog_2_3_16st1.mp3"></audio>
+        <audio id="introwt1_10_18" src="ton/prolog_2_3_17wm8.mp3"></audio>
+        <audio id="introwt1_10_19" src="ton/prolog_2_3_18wm9.mp3"></audio>
+
+
+
+
+
+
+    </a-assets>
+
+
+    <!-- Kamera -->
+    <a-entity id="kamera"
+              position ="0 102 7"
+              rotation ="-90 0 0"
+            camera
+            look-controls>
+        <a-cursor></a-cursor>
+
+        <!--Überspringen der Introkamerafahrt-->
+        <!--<a-animation attribute="position" from="0 102 7" to="0 6 10" delay="1000" dur="0"></a-animation>-->
+        <!--<a-animation attribute="rotation" from="-90 0 0" to="0 0 0" delay="1000" dur="0"></a-animation>-->
+
+        <!--Kamera zu Ausgangsposition-->
+        <a-animation attribute="position" from="0 102 7" to="0 20 80" delay="0" dur="60000"></a-animation>
+        <a-animation attribute="position" from="0 20 80" to="0 6 10" delay="60000" dur="60000"></a-animation>
+        <!--Kamera zu ShenTes Haus-->
+        <!--a-animation attribute="position" from="0 6 10" to="14 20 26" dur="60000"></a-animation-->
+        <!--a-animation attribute="position" from="14 20 26" to="29 6 43" dur="60000"></a-animation-->
+        <!--a-animation attribute="position" from="14 20 26" to="29 6 43" dur="60000"></a-animation-->
+
+    </a-entity>
+    
+    <!-- KAMERA ORIGINAL -->
+    <!--<a-entity id="kamera"
+                position ="0 102 7"
+                rotation ="-90 0 0"
+                camera
+                look-controls>
+        <a-cursor></a-cursor>
+        <a-animation attribute="position" from="0 102 7" to="0 20 80" delay="0" dur="60000"></a-animation>
+        <a-animation attribute="position" from="0 20 80" to="0 6 10" delay="60000" dur="60000"></a-animation>
+    </a-entity>-->
+
+
+    <!--Ton-------------------------------------------------------------------------------------------------------------------------------------------------------->
+    <!---->
+    <!--Hintergrundton-->
+    <a-entity id="hintergrundmusik" sound="src: #volkanMusik; autoplay: true; loop:true; volume: 30;"></a-entity>
+
+    <!-- Intro -->
+    <!--Dialoge-->
+    <a-sound id ="nar1" src="#introwt11" autoplay="true" play-next-sound ="#nar2" volume="30"></a-sound>
+    <a-sound id ="nar2" src="#introwt12" autoplay="false" play-next-sound ="#nar3" volume="30"></a-sound>
+    <a-sound id ="nar3" src="#introwt13" autoplay="false" play-next-sound ="#nar4" volume="30"></a-sound>
+    <a-sound id ="nar4" src="#introwt14" autoplay="false" play-next-sound ="#nar5" volume="30"></a-sound>
+    <a-sound id ="nar5" src="#introwt15" autoplay="false" play-next-sound ="#nar6" volume="30"></a-sound>
+    <a-sound id ="nar6" src="#introwt16" autoplay="false" play-next-sound ="#nar7" volume="30"></a-sound>
+    <a-sound id ="nar7" src="#introwt17" autoplay="false" play-next-sound ="#nar8" volume="30"></a-sound>
+    <a-sound id ="nar8" src="#introwt18" autoplay="false" play-next-sound ="#nar9" volume="30"></a-sound>
+    <a-sound id ="nar9" src="#introwt19" autoplay="false" play-next-sound ="#nar10" volume="30"></a-sound>
+    <a-sound id ="nar10" src="#introwt20" autoplay="false" play-next-sound ="#nar11" volume="30"></a-sound>
+    <a-sound id ="nar11" src="#introwt21" autoplay="false" play-next-sound ="#nar12" volume="30"></a-sound>
+    <a-sound id ="nar12" src="#introwt22" autoplay="false" volume="30"
+             wall-animate=""></a-sound>
+    <!-- Durch 'wall-animate=""'blinken alle verbliebenden Wände. Auch deren Hitboxen werden groß.-->
+    <!-- LETZTE ANIMATION AUS INTRO-NARRATION MIT WALL-ANIMATE -->
+    <!--Fo's Haus Narration-->
+    <a-sound id ="nar1_4_1" src="#introwt1_4_1" autoplay="false" on="FosAnim" play-next-sound="#pause_Fo_1" volume="30"></a-sound> <!-- "geduldet euch einen Augenblick""-->
+    <a-sound id ="pause_Fo_1" src="#pause" autoplay="false" play-next-sound="#pause_Fo_2" volume="30"></a-sound>
+    <a-sound id ="pause_Fo_2" src="#pause" autoplay="false" play-next-sound="#pause_Fo_3" volume="30"></a-sound>
+    <a-sound id ="pause_Fo_3" src="#pause" autoplay="false" play-next-sound="#nar1_4_2" volume="30"></a-sound>
+    <a-sound id ="nar1_4_2" src="#introwt1_4_2" autoplay="false" volume="30"></a-sound> <!-- Klopfen und wand hoch Fo's Haus -->
+    <!--Su's Haus Narration-->
+    <a-sound id ="nar1_5_1" src="#introwt1_5_1" autoplay="false" on="SusAnim" play-next-sound="#pause_Su_1" volume="30"></a-sound>
+    <a-sound id ="pause_Su_1" src="#pause" autoplay="false" play-next-sound="#pause_Su_2" volume="30"></a-sound>
+    <a-sound id ="pause_Su_2" src="#pause" autoplay="false" play-next-sound="#pause_Su_3" volume="30"></a-sound>
+    <a-sound id ="pause_Su_3" src="#pause" autoplay="false" play-next-sound="#pause_Su_4" volume="30"></a-sound>
+    <a-sound id ="pause_Su_4" src="#pause" autoplay="false" play-next-sound="#pause_Su_5" volume="30"></a-sound>
+    <a-sound id ="pause_Su_5" src="#pause" autoplay="false" play-next-sound="#pause_Su_6" volume="30"></a-sound>
+    <a-sound id ="pause_Su_6" src="#pause" autoplay="false" play-next-sound="#pause_Su_7" volume="30"></a-sound>
+    <a-sound id ="pause_Su_7" src="#pause" autoplay="false" play-next-sound="#pause_Su_8" volume="30"></a-sound>
+    <a-sound id ="pause_Su_8" src="#pause" autoplay="false" play-next-sound="#nar1_5_2" volume="30"></a-sound>
+    <a-sound id ="nar1_5_2" src="#introwt1_5_2" autoplay="false" play-next-sound="#nar1_5_3" volume="30"></a-sound>
+    <a-sound id ="nar1_5_3" src="#introwt1_5_3" autoplay="false" play-next-sound="#nar1_5_4" volume="30"></a-sound>
+    <a-sound id ="nar1_5_4" src="#introwt1_5_4" autoplay="false" play-next-sound="#nar1_5_5" volume="30"></a-sound>
+    <a-sound id ="nar1_5_5" src="#introwt1_5_5" autoplay="false" play-next-sound="#nar1_5_6" volume="30"></a-sound>
+    <a-sound id ="nar1_5_6" src="#introwt1_5_6" autoplay="false" play-next-sound="#nar1_5_7" volume="30"></a-sound>
+    <a-sound id ="nar1_5_7" src="#introwt1_5_7" autoplay="false" volume="30"></a-sound>
+    <!--Tscheng's Haus Narration-->
+    <a-sound id ="nar1_6_0" src="#introwt1_6_0" autoplay="false" on="TsAnim" play-next-sound="#pause_Ts_1" volume="30"></a-sound>
+    <a-sound id ="pause_Ts_1" src="#pause" autoplay="false" play-next-sound="#pause_Ts_2" volume="30"></a-sound>
+    <a-sound id ="pause_Ts_2" src="#pause" autoplay="false" play-next-sound="#pause_Ts_3" volume="30"></a-sound>
+    <a-sound id ="pause_Ts_3" src="#pause" autoplay="false" play-next-sound="#pause_Ts_4" volume="30"></a-sound>
+    <a-sound id ="pause_Ts_4" src="#pause" autoplay="false" play-next-sound="#pause_Ts_5" volume="30"></a-sound>
+    <a-sound id ="pause_Ts_5" src="#pause" autoplay="false" play-next-sound="#pause_Ts_6" volume="30"></a-sound>
+    <a-sound id ="pause_Ts_6" src="#pause" autoplay="false" play-next-sound="#pause_Ts_7" volume="30"></a-sound>
+    <a-sound id ="pause_Ts_7" src="#pause" autoplay="false" play-next-sound="#pause_Ts_8" volume="30"></a-sound>
+    <a-sound id ="pause_Ts_8" src="#pause" autoplay="false" play-next-sound="#pause_Ts_9" volume="30"></a-sound>
+    <a-sound id ="pause_Ts_9" src="#pause" autoplay="false" play-next-sound="#pause_Ts_10" volume="30"></a-sound>
+    <a-sound id ="pause_Ts_10" src="#pause" autoplay="false" play-next-sound="#pause_Ts_11" volume="30"></a-sound>
+    <a-sound id ="pause_Ts_11" src="#pause" autoplay="false" play-next-sound="#nar1_6_1" volume="30"></a-sound>
+    <a-sound id ="nar1_6_1" src="#introwt1_6_1" autoplay="false" play-next-sound="#pause_Ts_1-2" volume="30"></a-sound>
+    <a-sound id ="pause_Ts_1-2" src="#pause" autoplay="false" play-next-sound="#pause_Ts_2-2" volume="30"></a-sound>
+    <a-sound id ="pause_Ts_2-2" src="#pause" autoplay="false" play-next-sound="#pause_Ts_3-2" volume="30"></a-sound>
+    <a-sound id ="pause_Ts_3-2" src="#pause" autoplay="false" play-next-sound="#pause_Ts_4-2" volume="30"></a-sound>
+    <a-sound id ="pause_Ts_4-2" src="#pause" autoplay="false" play-next-sound="#pause_Ts_5-2" volume="30"></a-sound>
+    <a-sound id ="pause_Ts_5-2" src="#pause" autoplay="false" play-next-sound="#pause_Ts_6-2" volume="30"></a-sound>
+    <a-sound id ="pause_Ts_6-2" src="#pause" autoplay="false" play-next-sound="#pause_Ts_7-2" volume="30"></a-sound>
+    <a-sound id ="pause_Ts_7-2" src="#pause" autoplay="false" play-next-sound="#pause_Ts_8-2" volume="30"></a-sound>
+    <a-sound id ="pause_Ts_8-2" src="#pause" autoplay="false" play-next-sound="#pause_Ts_9-2" volume="30"></a-sound>
+    <a-sound id ="pause_Ts_9-2" src="#pause" autoplay="false" play-next-sound="#pause_Ts_10-2" volume="30"></a-sound>
+    <a-sound id ="pause_Ts_10-2" src="#pause" autoplay="false" play-next-sound="#pause_Ts_11-2" volume="30"></a-sound>
+    <a-sound id ="pause_Ts_11-2" src="#pause" autoplay="false" play-next-sound="#nar1_6_2" volume="30"></a-sound>
+    <a-sound id ="nar1_6_2" src="#introwt1_6_2" autoplay="false" play-next-sound="#nar1_6_3" volume="30"></a-sound>
+    <a-sound id ="nar1_6_3" src="#introwt1_6_3" autoplay="false" volume="30"></a-sound>
+    <!--Letztes Haus Narration-->
+    <a-sound id ="nar1_7_1" src="#introwt1_7_1" autoplay="false" on="TabakAnim" play-next-sound="#nar1_7_2" volume="30"></a-sound>
+    <a-sound id ="nar1_7_2" src="#introwt1_7_2" autoplay="false" play-next-sound="#nar1_7_3" volume="30"></a-sound>
+    <a-sound id ="nar1_7_3" src="#introwt1_7_3" autoplay="false" play-next-sound="#nar1_7_4" volume="30"></a-sound>
+    <a-sound id ="nar1_7_4" src="#introwt1_7_4" autoplay="false" volume="30"></a-sound>
+
+    <!--ShenTe's Haus Narration-->
+    <a-sound id ="nar1_8_1" src="#introwt1_8_1" autoplay="false" play-next-sound="#pause_st_1" volume="30"></a-sound>
+    <a-sound id ="pause_st_1" src="#pause" autoplay="false" play-next-sound="#nar1_6_2" volume="30"></a-sound>
+    <a-sound id ="nar1_8_2" src="#introwt1_8_2" autoplay="false" play-next-sound="#nar1_8_3" volume="30"></a-sound>
+    <a-sound id ="nar1_8_3" src="#introwt1_8_3" autoplay="false" play-next-sound="#nar1_8_4" volume="30"></a-sound>
+    <a-sound id ="nar1_8_4" src="#introwt1_8_4" autoplay="false" play-next-sound="#nar1_8_5" volume="30"></a-sound>
+    <a-sound id ="nar1_8_5" src="#introwt1_8_5" autoplay="false" play-next-sound="#nar1_8_6" volume="30"></a-sound>
+    <a-sound id ="nar1_8_6" src="#introwt1_8_6" autoplay="false" play-next-sound="nar1_8_7" volume="30"></a-sound>
+    <a-sound id ="nar1_8_7" src="#introwt1_8_7" autoplay="false" play-next-sound="#nar1_8_8" volume="30"></a-sound>
+    <a-sound id ="nar1_8_8" src="#introwt1_8_8" autoplay="false" play-next-sound="#nar1_8_9" volume="30"></a-sound>
+    <a-sound id ="nar1_8_9" src="#introwt1_8_9" autoplay="false" play-next-sound="#nar1_8_10" volume="30"></a-sound>
+    <a-sound id ="nar1_8_10" src="#introwt1_8_10" autoplay="false" play-next-sound="#nar1_8_11" volume="30"></a-sound>
+    <a-sound id ="nar1_8_11" src="#introwt1_8_11" autoplay="false" play-next-sound="#nar1_8_12" volume="30"></a-sound>
+    <a-sound id ="nar1_8_12" src="#introwt1_8_12" autoplay="false"  volume="30"></a-sound>
+
+
+
+
+
+    <!--Raum-->
+  <!---->
+  <!--Skybox-->
+  <a-sky id="skybox" color="#000000"></a-sky>
+    <!--Lichter-->
+  <a-entity light="type: ambient; color: #BBB; intensity: 0.5" >  </a-entity>
+  <a-entity light="type: directional; color: #FFF; intensity: 0.58" position="55.49 74.81 27.64" >  </a-entity>
+  <!--Grundriss von Sezuan-->
+  <!---->
+  <!--Grundplatte-->
+  <a-entity id="sezuan"
+            geometry = "primitive: plane; height:150; width:150"
+            position ="0 0 0"
+            rotation="90 0 0"
+            material="side:double"></a-entity>
+
+  <!--Häuser Grundrisse--------------------------------------------------------------------------------------------------------------------------------------------------------------->
+  <!---->
+  <!--Herr Fo's Haus-->
+  <a-entity id="FosHaus" class="house">
+    <a-animation attribute="scale" begin="FosAnim" to="1 1000 1" dur="15000" delay="14000"></a-animation>
+      <!---->
+      <!-- ANIMATION BEGINNT AUF FosAnim.-->
+      <!--Durch Hitbox Click getriggert-->
+    <a-box
+           geometry="primitive:box;depth:0.1;height:0.1;width:0.1"
+           position="-8.46 2.14 -2.29"
+           class="hitbox"
+           id="hitbox1"
+           material="transparent:true;shader:standard;flatShading:true;opacity:1;visible:false"
+           event-animate="target:#FosHaus; target2:#nar1_4_1; target3:#wassertraeger; classhitbox:hitbox; aevent:FosAnim; hitboxsmall:hitboxsmall">
+      <!--Animation zum großwerden -->
+      <a-animation attribute="geometry.width" begin="wallblink" from="0.1" to="10"></a-animation>
+      <a-animation attribute="geometry.height" begin="wallblink" from="0.1" to="4"></a-animation>
+      <a-animation attribute="geometry.depth"begin="wallblink" from="0.1" to="24" ></a-animation>
+      <!-- Animation zum kleinwerden -->
+      <a-animation attribute="geometry.width" begin="hitboxsmall" from="10" to="0.1"></a-animation>
+      <a-animation attribute="geometry.height" begin="hitboxsmall" from="4" to="0.1"></a-animation>
+      <a-animation attribute="geometry.depth"begin="hitboxsmall" from="24" to="0.1" ></a-animation>
+    </a-box>
+      <!--Keine Entity mehr. Da im JavaScript die nächsten Siblings angesprochen werden um Wände "used" zu schalten-->
+      <!--Wände-->
+    <a-entity id="fo_w1"
+              class="wall"
+              geometry="primitive: box; height: 0.2; width: 0.4; depth: 25"
+              rotation=" 0 0 0"
+              position ="-3.5 0 -2.5"
+              material="color: #000000">
+      <a-animation attribute="material.color" begin="wallblink"  from="#000000" to="#ffb223" dur="1000" direction="alternate" repeat="9"></a-animation>
+    </a-entity>
+    <a-entity id="fo_w2"
+              class="wall"
+              geometry="primitive: box; height: 0.2; width: 0.4; depth: 25"
+              rotation="0 0 0"
+              position ="-13.5 0 -2.5"
+              material="color: #000000">
+      <a-animation attribute="material.color" begin="wallblink"  from="#000000" to="#ffb223" dur="1000" direction="alternate" repeat="9"></a-animation>
+    </a-entity>
+    <a-entity id="fo_w3"
+              class="wall"
+              geometry="primitive: box; height: 0.2; width: 0.4; depth: 10"
+              rotation=" 0 90 0"
+              position ="-8.6 0 9.8"
+              material="color: #000000">
+      <a-animation attribute="material.color" begin="wallblink"  from="#000000" to="#ffb223" dur="1000" direction="alternate" repeat="9"></a-animation>
+    </a-entity>
+    <a-entity id="fo_w4"
+              class="wall"
+              geometry="primitive: box; height: 0.2; width: 0.4; depth: 10"
+              rotation=" 0 90 0"
+              position ="-8.6 0 -14.8"
+              material="color: #000000">
+      <a-animation attribute="material.color" begin="wallblink"  from="#000000" to="#ffb223" dur="1000" direction="alternate" repeat="9"></a-animation>
+    </a-entity>
+  </a-entity>
+    <!--Fo Innen-->
+  <a-entity id="FosHaus-Innen"
+            position ="-8.5 0 -3"
+            scale ="1.5 1 2">
+    <a-entity id="badewannefo"
+              obj-model="obj: #badewanne"
+              position="-2.57 0.201 -4.46"
+              scale="0.1 0.1 0.1">
+    </a-entity>
+    <a-entity id="schrankfo"
+              obj-model="obj: #schrank"
+              position="-2.61 0.201 1.81"
+              scale="0.1 0.15 0.1"
+              rotation="0 180 0">
+    </a-entity>
+    <a-entity id="nachttisch1fo"
+              obj-model="obj: #nachttisch"
+              position="-1.98 0.201 5.35"
+              scale="0.15 0.15 0.2"
+              rotation="0 -90 0">
+    </a-entity>
+    <a-entity id="nachttisch2fo"
+              obj-model="obj: #nachttisch"
+              position="2.34 0.201 5.35"
+              scale="0.15 0.15 0.2"
+              rotation="0 -90 0">
+    </a-entity>
+    <a-entity id="doppelbettfo"
+              obj-model="obj: #doppelbett"
+              position="-0.47 0.201 4.49"
+              scale="0.02 0.03 0.02"
+              rotation="0 -90 0">
+    </a-entity>
+    <a-entity id="kaminfo"
+              obj-model="obj: #kamin"
+              position=" 2.68 0.201 -3.13"
+              scale="0.1 0.1 0.07">
+      <a-entity id="kaminlicht" light="angle:91.03999999999999;color:#fff42b;groundColor:#f31212;decay:3.6399999999999997;distance:10.58;intensity:2.68;penumbra:0.48;type:spot" position="4.83 9.33 0" rotation="30.92 -91.61 4.59" scale="1.66 0.46 -0.72"></a-entity>
+    </a-entity>
+    <a-entity id="regalrfo"
+              obj-model="obj: #regalr"
+              position=" -1 0.201 -2.33"
+              scale="0.04 0.07 0.03">
+    </a-entity>
+    <a-entity id="FoDiener"
+              collada-model="#Personkniend"
+              scale="1.68 1.68 1.53"
+              color="white"
+              position="1.59 -0.36 -3.01"
+              rotation="0 90.52733163067008 0">
+    </a-entity>
+    <a-entity id="FoDiener2" collada-model="#standardfrau" scale="2 2 2" color="white" position="-1 0 0" rotation="0 180 0">
+      <a-animation attribute="position" from="-1 0 -1" to="-1 0 2" direction="alternate" delay="3000" dur="10000" repeat="indefinite" ></a-animation>
+      <a-animation attribute="rotation" from="0 0 0" to="0 180 0" direction="alternate" delay="12000" dur="1000" repeat="indefinite" ></a-animation>
+    </a-entity>
+  </a-entity>
+
+  <!--Su's Hause-->
+    <a-entity id="SusHaus" class="house">
+      <a-animation attribute="scale" begin="SusAnim" to="1 1000 1" delay="14000" dur="20000"></a-animation>
+      <a-box geometry="primitive:box;depth:0.1;height:0.1;width:0.1"
+             position="-8.46 2.14 24.61"
+             class="hitbox"
+             id="hitbox2"
+             material="transparent:true;shader:standard;flatShading:true;opacity:1;visible:false"
+             event-animate="target:#SusHaus; target2:#nar1_5_1; target3:#wassertraeger; classhitbox:hitbox; aevent:SusAnim; hitboxsmall:hitboxsmall" >
+        <a-animation attribute="geometry.width" begin="wallblink" from="0.1" to="10"></a-animation>
+        <a-animation attribute="geometry.height" begin="wallblink" from="0.1" to="4"></a-animation>
+        <a-animation attribute="geometry.depth"begin="wallblink" from="0.1" to="7" ></a-animation>
+        <!-- Animation zum kleinwerden -->
+        <a-animation attribute="geometry.width" begin="hitboxsmall" from="10" to="0.1"></a-animation>
+        <a-animation attribute="geometry.height" begin="hitboxsmall" from="4" to="0.1"></a-animation>
+        <a-animation attribute="geometry.depth"begin="hitboxsmall" from="7" to="0.1" ></a-animation>
+      </a-box>
+      <a-entity id="su_w1"
+                class="wall"
+                geometry="primitive: box; height: 0.2; width: 0.4; depth: 8"
+                rotation=" 0 0 0"
+                position ="-3.5 0 24.5"
+                material="color: #000000">
+        <a-animation attribute="material.color" begin="wallblink"  from="#000000" to="#ffb223" dur="1000" direction="alternate" repeat="9"></a-animation>
+      </a-entity>
+      <a-entity id="su_w2"
+                class="wall"
+                geometry="primitive: box; height: 0.2; width: 0.4; depth: 8"
+                rotation="0 0 0"
+                position ="-13.5 0 24.5"
+                material="color: #000000">
+        <a-animation attribute="material.color" begin="wallblink"  from="#000000" to="#ffb223" dur="1000" direction="alternate" repeat="9"></a-animation>
+      </a-entity>
+      <a-entity id="su_w3"
+                class="wall"
+                geometry="primitive: box; height: 0.2; width: 0.4; depth: 10"
+                rotation=" 0 90 0"
+                position ="-8.6 0 28.3"
+                material="color: #000000">
+        <a-animation attribute="material.color" begin="wallblink"  from="#000000" to="#ffb223" dur="1000" direction="alternate" repeat="9"></a-animation>
+      </a-entity>
+      <a-entity id="su_w4"
+                class="wall"
+                geometry="primitive: box; height: 0.2; width: 0.4; depth: 10"
+                rotation=" 0 90 0"
+                position ="-8.6 0 20.7"
+                material="color: #000000">
+        <a-animation attribute="material.color" begin="wallblink"  from="#000000" to="#ffb223" dur="1000" direction="alternate" repeat="9"></a-animation>
+      </a-entity>
+    </a-entity>
+    <a-entity id="SusHaus-Innen"
+            position ="-7 0 24">
+      <a-entity id="schranksu"
+                obj-model="obj: #schrank"
+                position="-2.59 0.201 1.12"
+                scale="0.1 0.15 0.1"
+                rotation="0 180 0">
+      </a-entity>
+      <a-entity id="nachttischsu"
+                obj-model="obj: #nachttisch"
+                position="0.75 0.201 2.32"
+                scale="0.15 0.15 0.2"
+                rotation="0 -90 0">
+      </a-entity>
+      <a-entity id="bettsu"
+                obj-model="obj: #bett"
+                position="2.44 0.201 1.52"
+                scale="0.02 0.03 0.02"
+                rotation="0 -90 0">
+      </a-entity>
+      <a-entity id="regalrsu"
+                obj-model="obj: #regalr"
+                position=" -1.46 0.201 -2.33"
+                scale="0.04 0.07 0.03">
+      </a-entity>
+      <a-entity id="stuhlsu"
+                obj-model="obj: #stuhl"
+                position=" 0.23 0.201 -2.54"
+                scale="0.03 0.04 0.03">
+      </a-entity>
+      <a-entity id="ofensu"
+                obj-model="obj: #ofen"
+                position=" 1.74 0.201 -1.94"
+                scale="0.05 0.05 0.05"
+                rotation="0 42.26 0">
+        <a-entity light="angle:78.46000000000001;color:#e98907;groundColor:#f31212;decay:3.64;distance:9.3;intensity:2.68;penumbra:0.48;type:spot" position="3.27 6.66 -4.40" rotation="32.36 -51.30 4.59" scale="1.66 0.46 -0.72"></a-entity>
+      </a-entity>
+      <a-entity id="SuModel" collada-model="#standardfrau" scale="2 2 2" color="white" position="-1 0 0" rotation="0 180 0">
+
+        <a-animation attribute="position" from="-1 0 0" to="-1 0 3" direction="alternate" delay="3000" dur="10000" repeat="indefinite" ></a-animation>
+        <a-animation attribute="rotation" from="0 0 0" to="0 180 0" direction="alternate" delay="12000" dur="1000" repeat="indefinite" ></a-animation>
+      </a-entity>
+    </a-entity>
+
+  <!--Herr Tsheng's Haus-->
+  <a-entity id="TshengsHaus" class="house">
+    <a-animation attribute="scale" begin="TsAnim" to="1 1000 1" dur="30000" delay="20000"></a-animation>
+    <a-box geometry="primitive:box;depth:0.1;height:0.1;width:0.1"
+           position="-24.77 2.14 10.34"
+           class="hitbox"
+           id="hitbox3"
+           material="transparent:true;shader:standard;flatShading:true;opacity:1;visible:false"
+           rotation="0 90 0"
+           event-animate="target:#TshengsHaus; target2:#nar1_6_0; target3:#wassertraeger; classhitbox:hitbox; aevent:TsAnim; hitboxsmall:hitboxsmall">
+      <a-animation attribute="geometry.width" begin="wallblink" from="0.1" to="9"></a-animation>
+      <a-animation attribute="geometry.height" begin="wallblink" from="0.1" to="4"></a-animation>
+      <a-animation attribute="geometry.depth"begin="wallblink" from="0.1" to="19" ></a-animation>
+      <!-- Animation zum kleinwerden -->
+      <a-animation attribute="geometry.width" begin="hitboxsmall" from="9" to="0.1"></a-animation>
+      <a-animation attribute="geometry.height" begin="hitboxsmall" from="4" to="0.1"></a-animation>
+      <a-animation attribute="geometry.depth"begin="hitboxsmall" from="19" to="0.1" ></a-animation>
+    </a-box>
+    <a-entity id="tsh_w1"
+              class="wall"
+              geometry="primitive: box; height: 0.2; width: 0.4; depth: 9"
+              rotation=" 0 0 0"
+              position ="-34.8 0 10.7"
+              material="color: #000000">
+      <a-animation attribute="material.color" begin="wallblink"  from="#000000" to="#ffb223" dur="1000" direction="alternate" repeat="9"></a-animation>
+    </a-entity>
+    <a-entity id="ths_w2"
+              class="wall"
+              geometry="primitive: box; height: 0.2; width: 0.4; depth: 9"
+              rotation="0 0 0"
+              position ="-15.2 0 10.7"
+              material="color: #000000">
+      <a-animation attribute="material.color" begin="wallblink"  from="#000000" to="#ffb223" dur="1000" direction="alternate" repeat="9"></a-animation>
+    </a-entity>
+    <a-entity id="tsh_w3"
+              class="wall"
+              geometry="primitive: box; height: 0.2; width: 0.4; depth: 20"
+              rotation=" 0 90 0"
+              position ="-25 0 6"
+              material="color: #000000">
+      <a-animation attribute="material.color" begin="wallblink"  from="#000000" to="#ffb223" dur="1000" direction="alternate" repeat="9"></a-animation>
+    </a-entity>
+    <a-entity id="tsh_w4"
+              class="wall"
+              geometry="primitive: box; height: 0.2; width: 0.4; depth: 20"
+              rotation=" 0 90 0"
+              position ="-25 0 15"
+              material="color: #000000">
+      <a-animation attribute="material.color" begin="wallblink"  from="#000000" to="#ffb223" dur="1000" direction="alternate" repeat="9"></a-animation>
+    </a-entity>
+  </a-entity>
+  <a-entity id="TshengsHaus-Innen"
+            material="color: #ffffff"
+            position ="-27.75 0 8.55">
+    <a-entity id="zubertsheng"
+              obj-model="obj: #zuber"
+              position="-1 0 -1"
+              scale="0.06 0.1 0.05">
+    </a-entity>
+    <a-entity id="schranktsheng"
+              obj-model="obj: #schrank"
+              position="-6.03 0.201 -0.6"
+              scale="0.1 0.15 0.1"
+              rotation="0 180 0">
+    </a-entity>
+    <a-entity id="nachttisch1tsheng"
+              obj-model="obj: #nachttisch"
+              position="-1.98 0.201 5.81"
+              scale="0.15 0.15 0.2"
+              rotation="0 -90 0">
+    </a-entity>
+    <a-entity id="nachttisch2tsheng"
+              obj-model="obj: #nachttisch"
+              position="2.34 0.201 5.81"
+              scale="0.15 0.15 0.2"
+              rotation="0 -90 0">
+    </a-entity>
+    <a-entity id="doppelbetttsheng"
+              obj-model="obj: #doppelbett"
+              position="-0.47 0.201 4.99"
+              scale="0.02 0.03 0.02"
+              rotation="0 -90 0">
+    </a-entity>
+    <a-entity id="hochbetttsheng"
+              obj-model="obj: #hochbett"
+              position="-5.5 0.201 4.17"
+              scale="0.02 0.03 0.02"
+              rotation="0 180 0">
+    </a-entity>
+    <a-entity id="regalqtsheng"
+              obj-model="obj: #regalq"
+              position=" -6.39 0.201 5.63"
+              scale="0.04 0.05 0.04">
+    </a-entity>
+    <a-entity id="Tisch_Stuehle_licht"
+              position="4 0 4">
+      <a-entity id="stuhl1tsheng"
+                obj-model="obj: #stuhl"
+                position=" 2.89 0.201 -4.76"
+                scale="0.03 0.04 0.03"
+                rotation="0 90 0">
+      </a-entity>
+      <a-entity id="stuhl2tsheng"
+                obj-model="obj: #stuhl"
+                position=" 4.41 0.201 -4.84"
+                scale="0.03 0.04 0.03"
+                rotation="0 90 0">
+      </a-entity>
+      <a-entity id="stuhl3tsheng"
+                obj-model="obj: #stuhl"
+                position=" 2.69 0.201 -2.89"
+                scale="0.03 0.04 0.03"
+                rotation="0 -90 0">
+      </a-entity>
+      <a-entity id="stuhl4tsheng"
+                obj-model="obj: #stuhl"
+                position=" 4.15 0.201 -2.79"
+                scale="0.03 0.04 0.03"
+                rotation="0 -90 0">
+      </a-entity>
+      <a-entity id="tischtsheng"
+                obj-model="obj: #tisch"
+                position=" 3.66 0.201 -3.75"
+                scale="0.03 0.011 0.01">
+      </a-entity>
+      <a-entity id="lampetsheng"
+                obj-model="obj: #schirmlampe"
+                position=" 3.66 1.24 -3.75"
+                scale="0.01 0.01 0.01">
+        <a-entity id="tischlicht" light="color: #CCC; angle: 88.96000000000001; distance: 3.74; intensity: 2.6799999999999997; penumbra: 0.04; type: spot; color: #fdf55e" rotation="-90 -4.60 0"></a-entity>
+      </a-entity>
+    </a-entity>
+    <a-entity id="Tscheng"
+              collada-model="#standardperson"
+              scale="2 2 2"
+              color="white"
+              position="6.14 0 3.78"
+              rotation="0 69.32789321082961 0">
+    </a-entity>
+    <a-entity id="Tscheng2"
+              collada-model="#standardperson"
+              scale="2 2 2"
+              color="white"
+              position="4.9 0 0.02"
+              rotation="0 69.33 0">
+    </a-entity>
+    <a-entity id="TschengBett1"
+              collada-model="#standardperson"
+              scale="1.2 1.2 1.09"
+              color="white"
+              position="0.89 1.36 3.91"
+              rotation="-64.74423084978302 90 90.52733163067008">
+    </a-entity>
+    <a-entity id="TschengBett2"
+              collada-model="#standardperson"
+              scale="1.2 1.2 1.09"
+              color="white"
+              position="-0.33 1.36 3.91"
+              rotation="-64.74423084978302 90 90.52733163067008">
+    </a-entity>
+    <a-entity id="PersonKniend"
+              collada-model="#Personkniend"
+              scale="1.68 1.68 1.53"
+              color="white"
+              position="2.82 -0.36 1.3"
+              rotation="0 177.6169164905552 0.5729577951308232">
+    </a-entity>
+    <a-entity id="Tscheng3"
+              collada-model="#standardperson"
+              scale="2 2 2"
+              color="white"
+              position="10.92 0 2.43"
+              rotation="0 69.33 0">
+    </a-entity>
+  </a-entity>
+
+  <!--Tabakladen-->
+  <a-entity id="Tabakladen"
+            class ="house"
+            position="31.8 0 -25.5"
+            scale="0.8 1 1" >
+    <a-animation attribute="scale" begin="TabakAnim" to="0.8 1000 1" delay="68000" dur="20000"></a-animation>
+    <a-box geometry="primitive:box;depth:0.1;height:0.1;width:0.1"
+           position="-24.97 2.14 11.65"
+           class="hitbox"
+           id="hitbox4"
+           material="transparent:true;shader:standard;flatShading:true;opacity:1;visible:false"
+           event-animate="target:#Tabakladen; target2:#nar1_7_1; target3:#wassertraeger; classhitbox:hitbox; aevent:TabakAnim; hitboxsmall:hitboxsmall">
+      <a-animation attribute="geometry.width" begin="wallblink" from="0.1" to="19"></a-animation>
+      <a-animation attribute="geometry.height" begin="wallblink" from="0.1" to="4"></a-animation>
+      <a-animation attribute="geometry.depth"begin="wallblink" from="0.1" to="6" ></a-animation>
+      <!-- Animation zum kleinwerden -->
+      <a-animation attribute="geometry.width" begin="hitboxsmall" from="19" to="0.1"></a-animation>
+      <a-animation attribute="geometry.height" begin="hitboxsmall" from="4" to="0.1"></a-animation>
+      <a-animation attribute="geometry.depth"begin="hitboxsmall" from="6" to="0.1" ></a-animation>
+    </a-box>
+    <a-entity id="tab_w1"
+              class="wall"
+              geometry="primitive: box; height: 0.2; width: 0.4; depth: 9"
+              rotation=" 0 0 0"
+              position ="-34.8 0 10.7"
+              material="color: #000000">
+      <a-animation attribute="material.color" begin="wallblink"  from="#000000" to="#ffb223" dur="1000" direction="alternate" repeat="9"></a-animation>
+    </a-entity>
+    <a-entity id="tab_w2"
+              class="wall"
+              geometry="primitive: box; height: 0.2; width: 0.4; depth: 9"
+              rotation="0 0 0"
+              position ="-15.2 0 10.7"
+              material="color: #000000">
+      <a-animation attribute="material.color" begin="wallblink"  from="#000000" to="#ffb223" dur="1000" direction="alternate" repeat="9"></a-animation>
+    </a-entity>
+    <a-entity id="tab_w3"
+              class="wall"
+              geometry="primitive: box; height: 0.2; width: 0.4; depth: 20"
+              rotation=" 0 90 0"
+              position ="-25 0 6"
+              material="color: #000000">
+      <a-animation attribute="material.color" begin="wallblink"  from="#000000" to="#ffb223" dur="1000" direction="alternate" repeat="9"></a-animation>
+    </a-entity>
+    <a-entity id="tab_w4"
+              class="wall"
+              geometry="primitive: box; height: 0.2; width: 0.4; depth: 20"
+              rotation=" 0 90 0"
+              position ="-25 0 15"
+              material="color: #000000">
+      <a-animation attribute="material.color" begin="wallblink"  from="#000000" to="#ffb223" dur="1000" direction="alternate" repeat="9"></a-animation>
+    </a-entity>
+  </a-entity>
+  <a-entity id="Tabakladen-Innen"
+            position ="11.5 0 -13.8">
+    <a-entity id="regalr1tabak"
+              obj-model="obj: #regalr"
+              position=" -5.70 0.201 -4.48"
+              scale="0.04 0.07 0.03">
+    </a-entity>
+    <a-entity id="regalr2tabak"
+              obj-model="obj: #regalr"
+              position=" -3.5 0.201 -4.48"
+              scale="0.04 0.07 0.03">
+    </a-entity>
+    <a-entity id="regalr3tabak"
+              obj-model="obj: #regalr"
+              position=" -1.30 0.201 -4.48"
+              scale="0.04 0.07 0.03">
+    </a-entity>
+    <a-entity id="regalr4tabak"
+              obj-model="obj: #regalr"
+              position=" 0.93 0.201 -4.48"
+              scale="0.04 0.07 0.03">
+    </a-entity>
+    <a-entity id="regalr5tabak"
+              obj-model="obj: #regalr"
+              position=" 3.14 0.201 -4.48"
+              scale="0.04 0.07 0.03">
+    </a-entity>
+    <a-entity id="regalr6tabak"
+              obj-model="obj: #regalr"
+              position=" 5.44 0.201 -4.48"
+              scale="0.04 0.07 0.03">
+    </a-entity>
+    <a-entity id="schranktabak"
+              obj-model="obj: #schrank"
+              position="7.12 0.201 -2.35"
+              scale="0.1 0.15 0.1"
+              rotation="0 180 0">
+    </a-entity>
+    <a-entity id="theke1tabak"
+              obj-model="obj: #schrank"
+              position="-3 0.201 -0.27"
+              scale="0.1 0.06 0.37"
+              rotation="0 -90 0">
+    </a-entity>
+    <a-entity id="theke2tabak"
+              obj-model="obj: #schrank"
+              position="5.3 0.201 -0.27"
+              scale="0.1 0.06 0.2"
+              rotation="0 -90 0">
+    </a-entity>
+  </a-entity>
+
+  <!--Shen Te's Haus-->
+  <a-entity id="ShenTesHaus"
+            class="finalHouse"
+            position="37.7 0 37.7"
+            scale="0.7 1 1.2" >
+      <a-animation attribute="scale" begin="ShenTeAnim" to="0.8 1000 1" delay="68000" dur="20000"></a-animation>
+      <a-box geometry="primitive:box;depth:0.1;height:0.1;width:0.1"
+             position="-24.97 2.14 11.65"
+             class="hitbox"
+             id="hitbox4"
+             material="transparent:true;shader:standard;flatShading:true;opacity:1;visible:false"
+             event-animate="target:#ShenTesHaus; target2:#nar1_7_1; target3:#wassertraeger; classhitbox:hitbox; aevent:ShenTeAnim; hitboxsmall:hitboxsmall">
+          <a-animation attribute="geometry.width" begin="wallblink" from="0.1" to="19"></a-animation>
+          <a-animation attribute="geometry.height" begin="wallblink" from="0.1" to="4"></a-animation>
+          <a-animation attribute="geometry.depth"begin="wallblink" from="0.1" to="6" ></a-animation>
+          <!-- Animation zum kleinwerden -->
+          <a-animation attribute="geometry.width" begin="hitboxsmall" from="19" to="0.1"></a-animation>
+          <a-animation attribute="geometry.height" begin="hitboxsmall" from="4" to="0.1"></a-animation>
+          <a-animation attribute="geometry.depth"begin="hitboxsmall" from="6" to="0.1" ></a-animation>
+      </a-box>
+      <a-entity id="shen_w1"
+                class="wall"
+                geometry="primitive: box; height: 0.2; width: 0.4; depth: 9"
+                rotation=" 0 0 0"
+                position ="-34.8 0 10.7"
+                material="color: #000000">
+          <a-animation attribute="material.color" begin="wallblink"  from="#000000" to="#ffb223" dur="1000" direction="alternate" repeat="9"></a-animation>
+      </a-entity>
+      <a-entity id="shen_w2"
+                class="wall"
+                geometry="primitive: box; height: 0.2; width: 0.4; depth: 9"
+                rotation="0 0 0"
+                position ="-15.2 0 10.7"
+                material="color: #000000">
+          <a-animation attribute="material.color" begin="wallblink"  from="#000000" to="#ffb223" dur="1000" direction="alternate" repeat="9"></a-animation>
+      </a-entity>
+      <a-entity id="shen_w3"
+                class="wall"
+                geometry="primitive: box; height: 0.2; width: 0.4; depth: 20"
+                rotation=" 0 90 0"
+                position ="-25 0 6"
+                material="color: #000000">
+          <a-animation attribute="material.color" begin="wallblink"  from="#000000" to="#ffb223" dur="1000" direction="alternate" repeat="9"></a-animation>
+      </a-entity>
+      <a-entity id="shen_w4"
+                class="wall"
+                geometry="primitive: box; height: 0.2; width: 0.4; depth: 20"
+                rotation=" 0 90 0"
+                position ="-25 0 15"
+                material="color: #000000">
+          <a-animation attribute="material.color" begin="wallblink"  from="#000000" to="#ffb223" dur="1000" direction="alternate" repeat="9"></a-animation>
+      </a-entity>
+  </a-entity>
+  <a-entity id="ShenTesHaus-Innen"
+            position ="20 0 50">
+    <a-entity id="badewanneshente"
+              obj-model="obj: #badewanne"
+              position="-5.96 0.201 -2.81"
+              scale="0.15 0.1 0.15">
+    </a-entity>
+    <a-entity id="schrankshente"
+              obj-model="obj: #schrank"
+              position="-6.08 0.201 1.81"
+              scale="0.1 0.15 0.2"
+              rotation="0 180 0">
+    </a-entity>
+    <a-entity id="nachttischshente"
+              obj-model="obj: #nachttisch"
+              position="3.29 0.201 4.33"
+              scale="0.15 0.15 0.2"
+              rotation="0 -90 0">
+    </a-entity>
+    <a-entity id="lampe1shente"
+              obj-model="obj: #schirmlampe"
+              position="-3.29 2.79 0.46"
+              scale="0.02 0.01 0.02">
+      <a-entity light="angle:88.96;color:#fb0000;groundColor:#93000b;decay:0.96;distance:6.96;intensity:2.4000000000000004;penumbra:0.04;type:spot" rotation="-90 -4.60 0"></a-entity>
+    </a-entity>
+    <a-entity id="lampe2shente"
+              obj-model="obj: #schirmlampe"
+              position="3.33 2.79 0.46"
+              scale="0.02 0.01 0.02">
+      <a-entity light="angle:88.96;color:#fb0000;groundColor:#93000b;decay:0.96;distance:6.96;intensity:2.4000000000000004;penumbra:0.04;type:spot" rotation="-90 -4.60 0"></a-entity>
+    </a-entity>
+    <a-entity id="himmelbettshente"
+              obj-model="obj: #himmelbett"
+              position="0.73 0.201 2.97"
+              scale="0.03 0.03 0.03"
+              rotation="0 -90 0">
+    </a-entity>
+  </a-entity>
+  <!--Shente Model-->
+  <a-entity id="shantee" collada-model="#shantee" scale="2 2 2" color="white" position="17 0 48" rotation="0 90 0">
+      <!--Standardbewegung-->
+    <a-animation attribute="position" from="17 0 48" to="25 0 48" direction="alternate" delay="3000" dur="10000" repeat="indefinite" ></a-animation>
+    <a-animation attribute="rotation" from="0 90 0" to="0 -90 0" direction="alternate" delay="12000" dur="1000" repeat="indefinite" ></a-animation>
+      <!--Gespräch mit Fo-->
+  </a-entity>
+
+
+  <!--Straßen-Grundriss-->
+  <!--Hauptstraße-->
+  <a-entity id="hauptstraße-1"
+            geometry="primitive: box; width: 0.1; height: 0.1; depth: 150"
+            material="color: #000000"
+            position ="-3 0 0"></a-entity>
+  <a-entity id="hauptstraße-2"
+            geometry="primitive: box; width: 0.1; height: 0.1; depth: 150"
+            material="color: #000000"
+            position ="3 0 0"></a-entity>
+  <!--Seitenstraße-1-V-->
+  <a-entity id="seitenstraße-1.1"
+            geometry="primitive: box; width: 70; height: 0.1; depth: 0.1"
+            material="color: #000000"
+            position ="38 0 -10"></a-entity>
+  <a-entity id="seitenstraße-1.2"
+            geometry="primitive: box; width: 70; height: 0.1; depth: 0.1"
+            material="color: #000000"
+            position ="38 0 -6"></a-entity>
+  <!--Seitenstraße-2-V-->
+  <a-entity id="seitenstraße-2.1"
+            geometry="primitive: box; width: 70; height: 0.1; depth: 0.1"
+            material="color: #000000"
+            position ="-38 0 -20"></a-entity>
+  <a-entity id="seitenstraße-2.2"
+            geometry="primitive: box; width: 70; height: 0.1; depth: 0.1"
+            material="color: #000000"
+            position ="-38 0 -16"></a-entity>
+  <!--Seitenstraße-3-H-->
+  <a-entity id="seitenstraße-3.1"
+            geometry="primitive: box; width: 70; height: 0.1; depth: 0.1"
+            material="color: #000000"
+            position ="38 0 40"></a-entity>
+  <a-entity id="seitenstraße-3.2"
+            geometry="primitive: box; width: 70; height: 0.1; depth: 0.1"
+            material="color: #000000"
+            position ="38 0 44"></a-entity>
+  <!--Seitenstraße-4-H-->
+  <a-entity id="seitenstraße-4.1"
+            geometry="primitive: box; width: 70; height: 0.1; depth: 0.1"
+            material="color: #000000"
+            position ="-38 0 20"></a-entity>
+  <a-entity id="seitenstraße-4.2"
+            geometry="primitive: box; width: 70; height: 0.1; depth: 0.1"
+            material="color: #000000"
+            position ="-38 0 16"></a-entity>
+  <!--Ende Straßen-->
+
+  <!--Rest der Häuser-->
+  <a-entity id="random-haus1"
+            obj-model="obj: #house1"
+            scale="0.01 0.01 0.01"
+            position="-50 3 -8"
+            rotation="0 180 0"></a-entity>
+  <a-entity id="random-haus2"
+            obj-model="obj: #house2"
+            scale="0.01 0.01 0.01"
+            position="-13 3 -25"
+            rotation="0 90 0"></a-entity>
+  <a-entity id="random-haus3"
+            obj-model="obj: #house3"
+            scale="0.01 0.01 0.01"
+            position="10 3 -28"
+            rotation="0 270 0"></a-entity>
+  <a-entity id="random-haus4"
+            obj-model="obj: #house5"
+            scale="0.01 0.01 0.01"
+            position="27 3 -14"
+            rotation="0 90 0"></a-entity>
+  <a-entity id="random-haus6"
+            obj-model="obj: #house2"
+            scale="0.01 0.01 0.01"
+            position="7 3 16"
+            rotation="0 180 0"></a-entity>
+  <a-entity id="random-haus7"
+            obj-model="obj: #house5"
+            scale="0.01 0.01 0.01"
+            position="-21.5 3 24.5"
+            rotation="0 270 0"></a-entity>
+  <a-entity id="random-haus8"
+            obj-model="obj: #house1"
+            scale="0.01 0.01 0.01"
+            position="-10 3 -37"
+            rotation="0 90 0"></a-entity>
+  <a-entity id="random-haus9"
+            obj-model="obj: #house1"
+            scale="0.01 0.01 0.01"
+            position="-10 3 -58"
+            rotation="0 90 0"></a-entity>
+  <a-entity id="random-haus10"
+            obj-model="obj: #house1"
+            scale="0.01 0.01 0.01"
+            position="-19 3 -27"
+            rotation="0 0 0"></a-entity>
+  <a-entity id="random-haus11"
+            obj-model="obj: #house2"
+            scale="0.01 0.01 0.01"
+            position="6 3 -52"
+            rotation="0 0 0"></a-entity>
+  <a-entity id="random-haus12"
+            obj-model="obj: #house2"
+            scale="0.01 0.01 0.01"
+            position="-6 3 58"
+            rotation="0 180 0"></a-entity>
+  <a-entity id="random-haus13"
+            obj-model="obj: #house5"
+            scale="0.01 0.01 0.01"
+            position="-7 3 36"
+            rotation="0 180 0"></a-entity>
+  <a-entity id="random-haus14"
+            obj-model="obj: #house5"
+            scale="0.01 0.01 0.01"
+            position="7 3 52"
+            rotation="0 180 0"></a-entity>
+  <a-entity id="random-haus15"
+            obj-model="obj: #house5"
+            scale="0.01 0.01 0.01"
+            position="-34 3 -11.5"
+            rotation="0 270 0"></a-entity>
+  <a-entity id="random-haus16"
+            obj-model="obj: #house2"
+            scale="0.01 0.01 0.01"
+            position="-23.5 3 -11.5"
+            rotation="0 90 0"></a-entity>
+  <a-entity id="random-haus17"
+            obj-model="obj: #house1"
+            scale="0.01 0.01 0.01"
+            position="-35 3 27"
+            rotation="0 180 0"></a-entity>
+  <a-entity id="random-haus18"
+            obj-model="obj: #house1"
+            scale="0.01 0.01 0.01"
+            position="-41 3 8"
+            rotation="0 0 0"></a-entity>
+  <a-entity id="random-haus19"
+            obj-model="obj: #house3"
+            scale="0.01 0.01 0.01"
+            position="-50 3 27"
+            rotation="0 180 0"></a-entity>
+
+
+
+    <!--Figuren----------------------------------------------------------------------------------------------------------------------------------------------->
+    <!---->
+    <!--Götter-->
+    <a-entity id="gott1" collada-model="#gottFigur" scale="2 2 2" color="white" position ="20 105 0">
+        <a-animation attribute="position" from="20 105 0" to="2 0 0" delay="116000" dur="10000"></a-animation>
+    </a-entity>
+    <a-entity id="gott2" collada-model="#gottFigur" scale="2 2 2" color="white" position ="-20 105 0">
+        <a-animation attribute="position" from="-20 105 0" to="-2 0 0" delay="116000" dur="10000"></a-animation>
+    </a-entity>
+    <a-entity id="gott3" collada-model="#gottFigur" scale="2 2 2" color="white" position ="0 105 20">
+        <a-animation attribute="position" from="0 105 20" to="0 0 1" delay="116000" dur="10000"></a-animation>
+    </a-entity>
+
+    <!--Wasserträger Wang-->
+    <a-entity id="wassertraeger" collada-model="#wasserFigur" scale="2 2 2" color="white" position ="0 0 85" rotation="0 180 0"
+              wall-animate="">
+        <!--Wang hat wall-animate, weil manche Animationen von Wang die Wände blinken lassen sollen-->
+        <!--wall-animate nach Animation mit "class='trigger'"-->
+
+        <!--ORIGINAL-->
+        <a-animation attribute="position" from="0 0 85" to="0 0 5" delay="500" dur="130000"></a-animation>
+        <!--ARBEITSANIMATION VERKÜRZT-->
+        <!--<a-animation class="trigger" attribute="position" from="0 0 85" to="0 0 5" delay="0" dur="0"></a-animation>-->
+        <!--Hin und her Wackeln-->
+        <a-animation attribute="rotation" direction="alternate" from="0 180 -4" to="0 180 4" delay="500" dur="1500" repeat="100"></a-animation>
+
+        <!--Wang Animationen-->
+        <!---->
+        <!--Fo's Haus Animation-->
+        <a-animation begin="FosAnim" attribute="rotation" from="0 180 0" to="0 270 0" delay="2000" dur="2000"></a-animation>
+        <a-animation begin="FosAnim" attribute="position" from="0 0 5" to="-2.8 0 5" delay="2000" dur="4000"></a-animation>
+        <a-animation begin="FosAnim" attribute="rotation" from="0 270 0" to="0 90 0" delay="6000" dur="2000"></a-animation>
+        <a-animation begin="FosAnim" attribute="position" from="-2.8 0 5"  to="0 0 5" delay="8000" dur="2500"></a-animation>
+        <a-animation begin="FosAnim" attribute="rotation" from="0 90 0" to="0 180 0" delay="10500" dur="2000"></a-animation>
+        <a-animation begin="FosAnim" class="trigger" attribute="position" from="0 0 5" to="0 0 5" delay="25000" dur="2000"></a-animation>
+        <!--Su's Haus Animation-->
+        <a-animation begin="SusAnim" attribute="rotation" from="0 180 0" to="0 0 0" delay="3000" dur="1000"></a-animation>
+        <a-animation begin="SusAnim" attribute="position" from="0 0 5" to="0 0 24" delay="4000" dur="5000"></a-animation>
+        <a-animation begin="SusAnim" attribute="rotation" from="0 0 0" to="0 -90 0" delay="9000" dur="1000"></a-animation>
+        <a-animation begin="SusAnim" attribute="position" from="0 0 24" to="-2.7 0 24" delay="10000" dur="1500"></a-animation>
+        <a-animation begin="SusAnim" attribute="rotation" from="0 -90 0" to="0 180 0" delay="13000" dur="1000"></a-animation>
+        <a-animation begin="SusAnim" attribute="position" from="-2.7 0 24" to="0 0 5" delay="14000" dur="8000"></a-animation>
+        <a-animation begin="SusAnim" class="trigger" attribute="position" from="0 0 5" to="0 0 5" delay="44000" dur="2000"></a-animation>
+        <!--Tscheng's Haus Animation-->
+        <a-animation begin="TsAnim" attribute="rotation" from="0 180 0" to="0 0 0" delay="1500" dur="1000"></a-animation>
+        <a-animation begin="TsAnim" attribute="position" from="0 0 5" to="0 0 16.5" delay="2000" dur="4000"></a-animation>
+        <a-animation begin="TsAnim" attribute="rotation" from="0 0 0" to="0 -90 0" delay="7000" dur="500"></a-animation>
+        <a-animation begin="TsAnim" attribute="position" from="0 0 16.5" to="-20 0 16.5" delay="7500" dur="2500"></a-animation>
+        <a-animation begin="TsAnim" attribute="rotation" from="0 -90 0" to="0 -180 0" delay="10000" dur="500"></a-animation>
+        <a-animation begin="TsAnim" attribute="rotation" from="0 -180 0" to="0 90 0" delay="20500" dur="1500"></a-animation>
+        <a-animation begin="TsAnim" attribute="position" from="-20 0 16.5" to="0 0 16.5" delay="22000" dur="3000"></a-animation>
+        <a-animation begin="TsAnim" attribute="rotation" from="0 90 0" to="0 180 0" delay="25000" dur="500"></a-animation>
+        <a-animation begin="TsAnim" attribute="position" from="0 0 16.5" to="0 0 5" delay="25500" dur="4000"></a-animation>
+        <a-animation begin="TsAnim" class="trigger" attribute="position" from="0 0 5" to="0 0 5" delay="47000" dur="2000"></a-animation>
+        <!--Tabakladen Animation-->
+        <a-animation begin="TabakAnim" attribute="position" from="0 0 5" to="0 0 -9" delay="4000" dur="3000"></a-animation>
+        <a-animation begin="TabakAnim" attribute="rotation" from="0 180 0" to="0 90 0" delay="7000" dur="500"></a-animation>
+        <a-animation begin="TabakAnim" attribute="position" from="0 0 -9" to="13 0 -9" delay="7500" dur="2000"></a-animation>
+        <a-animation begin="TabakAnim" attribute="rotation" from="0 90 0" to="0 180 0" delay="9500" dur="500"></a-animation>
+        <a-animation begin="TabakAnim" attribute="rotation" from="0 180 0" to="0 270 0" delay="66000" dur="500"></a-animation>
+        <a-animation begin="TabakAnim" attribute="position" from="13 0 -9" to="0 0 -9" delay="66500" dur="2000"></a-animation>
+        <a-animation begin="TabakAnim" attribute="rotation" from="0 270 0" to="0 0 0" delay="68500" dur="500"></a-animation>
+        <a-animation begin="TabakAnim" attribute="position" from="0 0 -9" to="0 0 5" delay="69000" dur="2000"></a-animation>
+        <a-animation begin="TabakAnim" attribute="rotation" from="0 0 0" to="0 180 0" delay="71000" dur="800"></a-animation>
+        <a-animation begin="TabakAnim" class="trigger" attribute="position" from="0 0 5" to="0 0 5" delay="77000" dur="2000"></a-animation>
+
+        <!--ShenTe Animation-->
+        <!---->
+        <!--Funktion wenn alle Häuser abgearbeitet sind-->
+
+        <!--Alle extra Häuser fahren runter-->
+
+        <!--Drehung zum Publikum-->
+        <!--<a-animation begin="turn" attribute="rotation" from="0 180 0" to="0 -180 0" delay="0" dur="3000"></a-animation>
+        <!-- "Jetzt bleibt nur noch Shente"-->
+        <!--<a-animation begin="ShenTeAnim" attribute="position" from="0 0 5" to="0 0 42" delay="4000" dur="3000"></a-animation>-->
+        <!--<a-animation begin="ShenTeAnim" attribute="rotation" from="0 -180 0" to="0 90 0" delay="7000" dur="500"></a-animation>-->
+        <!--<a-animation begin="ShenTeAnim" attribute="position" from="0 0 42" to="23 0 42" delay="4000" dur="3000"></a-animation>-->
+        <!--<a-animation begin="ShenTeAnim" attribute="rotation" from="0 90 0" to="0 -180 0" delay="7000" dur="500"></a-animation>-->
+
+    </a-entity>
+
+    <!-- Personen aus Einleitung (nicht Götter...) -->
+    <!---->
+    <!--Arbeiter-->
+    <a-entity id="arbeiter" collada-model="#standardperson" scale="2 2 2" color="black" position="24 0 -7" visible="false">
+      <a-animation attribute="visible" to="true" delay="83000" dur="2000"></a-animation>
+      <a-animation attribute="position" from="24 0 -7" to="0 0 -7" delay="83000" dur="18000"></a-animation>
+      <a-animation attirbute="rotation" from="0 0 0" to="0 90 0" delay="99000" dur="4000"></a-animation>
+      <a-animation attribute="position" from="0 0 -7" to="0 0 -60" delay="101000" dur="25000"></a-animation>
+      <a-animation attribute="visible" to="false" delay="125000" dur="2000"></a-animation>
+    </a-entity>
+    <!--Standardperson2-->
+    <a-entity id="arbeiter" collada-model="#standardperson" scale="2 2 2" color="black" position="26 0 -7" visible="false">
+      <a-animation attribute="visible" to="true" delay="83000" duration="2000"></a-animation>
+      <a-animation attribute="position" from="26 0 -7" to="2 0 -7" delay="83000" dur="18000"></a-animation>
+      <a-animation attirbute="rotation" from="0 0 0" to="0 90 0" delay="99000" dur="4000"></a-animation>
+      <a-animation attribute="position" from="2 0 -7" to="2 0 -60" delay="101000" dur="25000"></a-animation>
+      <a-animation attribute="visible" to="false" delay="125000" dur="2000"></a-animation>
+    </a-entity>
+    <!-- Zweite gesichtete Person -->
+    <a-entity id="arbeiter" collada-model="#standardperson" scale="2 2 2" color="black" position="-18 0 -18" visible="false">
+      <a-animation attribute="visible" to="true" delay="95000" dur="2000"></a-animation>
+      <a-animation attribute="position" from="-18 0 -18" to="0 0 -18" delay="95000" dur="25000"></a-animation>
+      <a-animation attirbute="rotation" from="0 0 0" to="0 90 0" delay="113000" dur="4000"></a-animation>
+      <a-animation attribute="position" from="0 0 -18" to="0 0 -50" delay="115000" dur="25000"></a-animation>
+      <a-animation attribute="visible" to="false" delay="140000" dur="2000"></a-animation>
+    </a-entity>
+    <!--Freier-->
+    <a-entity id="freier" collada-model="#standardperson" scale="2 2 2" color="black" position="0 0 75" rotation="0 180 0" visible="false">
+        <!--<a-animation attribute="visible" to="true" delay="95000" dur="2000"></a-animation>-->
+        <!--<a-animation attribute="position" from="0 0 75" to="0 0 42" delay="95000" dur="25000"></a-animation>-->
+        <!--<a-animation attribute="rotation" from="0 180 0" to="0 90 0" delay="113000" dur="4000"></a-animation>-->
+        <!--<a-animation attribute="position" from="0 0 42" to="0 22 42" delay="115000" dur="25000"></a-animation>-->
+        <!--<a-animation attribute="rotation" from="0 90 0" to="0 -90 0" delay="113000" dur="4000"></a-animation>-->
+        <!--<a-animation attribute="position" from="0 22 42" to="0 0 42" delay="115000" dur="25000"></a-animation>-->
+        <!--<a-animation attribute="rotation" from="0 -90 0" to="0 -180 0" delay="113000" dur="4000"></a-animation>-->
+        <!--<a-animation attribute="position" from="0 0 42" to="0 0 75" delay="115000" dur="25000"></a-animation>-->
+        <!--<a-animation attribute="visible" to="false" delay="140000" dur="2000"></a-animation>-->
+    </a-entity>
+  </a-scene>
+ </body>
+</html>
