@@ -26,15 +26,18 @@ AFRAME.registerComponent('pause-sound', {
 
 AFRAME.registerComponent('wall-animate', {
     schema: {
-        aevent: {default: 'wallblink'}
+        aevent: {default: 'wallblink'},
     },
 
     init: function () {
         var data = this.data;
         var element = this.el;
+
         var children = element.childNodes;
         newclasshitbox = document.getElementsByClassName("hitbox");
         newclasswall = document.getElementsByClassName("wall");
+
+
 
         // Schickt Event an Alle Wände und Hitboxen bei Sound-Ended
         this.el.addEventListener('sound-ended', function () {
@@ -49,6 +52,7 @@ AFRAME.registerComponent('wall-animate', {
 
         // Schickt Event an Alle Wände und Hitboxen bei AnimationEnd mit klasse "trigger"
         this.el.addEventListener('animationend', function (e) {
+
             var sender = e.target;
             var senderclass = sender.getAttribute("class");
 
@@ -92,6 +96,7 @@ AFRAME.registerComponent('event-animate', {
         var element = this.el;
         newclasshitbox = document.getElementsByClassName("hitbox");
 
+
         this.el.addEventListener(data.triggeraction, function () {
 
             // Klasse der hitbox ändern, wenn sie geklickt wurde
@@ -126,11 +131,18 @@ AFRAME.registerComponent('event-animate', {
             if (data.target8) data.target8.emit(data.aevent);
 
             data.target.setAttribute("used","true");
+
         });
     }
 });
 
-
+//Skip - Button
+//Idee : Wenn dreimal geklickt dann
+// 1. skip to dialog soundso
+// 2. kamera position soundso
+// 3. Wasserträger posititon soundso
+// 4. Götter Position so und so
+// 5. Trigger für wall animate
 
 
 
