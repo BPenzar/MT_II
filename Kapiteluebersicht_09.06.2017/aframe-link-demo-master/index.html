@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <!--<script src="sw-load.js" data-service-worker="sw.js" data-service-worker-scope="./"></script>-->
+    <title>Lobby | A-Frame Link Demo</title>
+    <script src="js/vendor/aframe.min.js"></script>
+    <script src="js/aframe-hyperlink.js"></script>
+
+  </head>
+  <body>
+    <a-scene>
+
+<!--..............................................................-->
+      <a-entity>
+        <a-camera id="camera" look-controls wasd-controls>
+           <a-cursor color="#4CC3D9"></a-cursor>
+        </a-camera>
+      </a-entity>
+
+<!--..............................................................-->
+      <!-- Link orb-on-pedestal! -->
+      <a-entity position="-1 1 -1">
+        <a-sphere rotation="0 200 0" radius="0.3" color="#ffffff" opacity="1" roughness="0.8" href="pages/link-vending-machine.html"></a-sphere>
+      </a-entity>
+
+    </a-scene>
+  </body>
+</html>
