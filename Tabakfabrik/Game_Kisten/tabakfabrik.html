@@ -4,7 +4,8 @@
     <meta charset="utf-8">
     <title>Tabakfabrik - MT I </title>
     <meta name="description" content="Tabakfabrik - MT I">
-    <script src="js/aframe.min.js"></script>
+    <!--<script src="js/aframe.min.js"></script>-->
+    <script src="https://aframe.io/releases/0.5.0/aframe.min.js"></script>
     <script src="js/main.js"></script>
     <script src="js/tabakspiel.js"></script>
   </head>
@@ -563,11 +564,13 @@
           <a-animation attribute="position"  from="1 1.56 0.9" to="8 1.56 0.9" dur="12000"></a-animation>
         </a-entity>-->
       </a-entity>
-      <!--STEMPEL TESTING -->
-      <a-entity id="stempel" geometry="primtive:box" material="" position="-13 5.8 -10" ></a-entity>
 
+      <!--STEMPEL -->
+      <a-entity id="stempel" geometry="primtive:box" material="" position="-13 5.8 -10" stempel="" >
+        <a-animation id="stempelAnimation" attribute="position" from="0 0 0" to="0 0 0" dur="800" begin="stempelStart"></a-animation>
+        <a-animation id="stempelAnimationDown" attribute="position" from="0 0 0" to="0 0 0" dur="800" begin="stempelStartDown" delay="800" direction="alternate"></a-animation>
 
-
+      </a-entity>
 
 
       <!-- Fließband 4 -->
