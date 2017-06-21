@@ -12,7 +12,7 @@ AFRAME.registerComponent('kistenspawn', {
             var name = 'kiste' + kistencounter,
                 productionLine = document.querySelector('#fließband3'),
                 box = document.createElement('a-entity'),
-                farbe = function() {
+                /*farbe = function() {
                     var number = Math.floor(Math.random() * 3) + 1;
                     switch(number) {
                         case 1:
@@ -22,8 +22,9 @@ AFRAME.registerComponent('kistenspawn', {
                         case 3:
                             return '#ff0000';
                     }
-                },
+                },*/
                 count = 0,
+                // Alle Attribute festlegen
                 attributes = {
                     'id': name,
                     'class': 'kiste',
@@ -35,10 +36,10 @@ AFRAME.registerComponent('kistenspawn', {
                     'position': '1 1.7 0.9',
                     'rotation': '-90 0 0',
                     'kistenabstand': '',
-                    //'kistenclick': '',
+                    'kistenclick': '',
                     'material': {
                         side: 'double',
-                        color: farbe()
+                        color: ''
                     }
                 },
                 assetPosition = [
@@ -50,6 +51,7 @@ AFRAME.registerComponent('kistenspawn', {
                 ],
                 assets = {
                     'class': 'asset',
+                    'assetclick': '',
                     'geometry': {
                         primitive: 'box',
                         height: 0.35,
@@ -59,11 +61,9 @@ AFRAME.registerComponent('kistenspawn', {
                     'position': assetPosition[0],
                     'material': {
                         side: 'double',
-                        color: ''
-                    },
-                    'assets': ''
+                        color: '#6d9292'
+                    }
                 },
-
 
                 animationattributes = {
                     'attribute': 'position',
@@ -71,7 +71,17 @@ AFRAME.registerComponent('kistenspawn', {
                     'to': '8 1.7 0.9',
                     'dur': '12000',
                     'begin': ''
+                },
+                vanishanimation = {
+                    'attribute': 'position',
+                    'from': '8 1.7 0.9',
+                    'to': '13 1.7 0.9',
+                    'dur': '7500',
+                    'begin': 'crateVanish',
+                    'delay': '1800'
                 };
+
+            // Alle Attribute anfügen und Elemente der Szene hinzufügen
 
             for (var property in attributes) {
                 box.setAttribute(property, attributes[property]);
@@ -94,7 +104,19 @@ AFRAME.registerComponent('kistenspawn', {
 
             newBox.appendChild(newAnimation);
 
+            // Animation fürs wegfahren, wenn Kiste fertig ist
+            var vanishAnimation = document.createElement('a-animation');
+            for (var vanishAttributes in vanishanimation) {
+                vanishAnimation.setAttribute(vanishAttributes, vanishanimation[vanishAttributes]);
+            }
+            newBox.appendChild(vanishAnimation);
+
+            // Ein Asset Random auswählen
+
+            var glowNumber = Math.floor(Math.random() * 3);
+
             //4 Hitboxen einfügen
+
             for (var k = 0; k<4; k++) {
 
                 var newAsset = document.createElement('a-entity');
@@ -103,6 +125,7 @@ AFRAME.registerComponent('kistenspawn', {
                     newAsset.setAttribute(assetProperty, assets[assetProperty]);
                 }
                 newAsset.setAttribute('position', assetPosition[count]);
+                if (glowNumber == k) newAsset.setAttribute('class', 'asset glow');
                 newBox.appendChild(newAsset);
                 count++;
             }
@@ -138,7 +161,7 @@ AFRAME.registerComponent('kistenabstand', {
             el.firstChild.setAttribute('dur', (15 - thisPosition) * 1000);
         });
 
-    },
+            },
 
     tick: function () {
             this.data.distance = this.data.prebox.getAttribute('position').x - this.data.thisbox.getAttribute('position').x;
@@ -150,6 +173,9 @@ AFRAME.registerComponent('kistenabstand', {
                 this.el.emit('animationGo');
                 this.data.status = true;
             }
+            // Hitbox leuchten lassen
+
+
 
      }
 });
@@ -157,67 +183,82 @@ AFRAME.registerComponent('kistenabstand', {
 AFRAME.registerComponent('kistenclick', {
 
     init: function() {
-        var el = this.el;
-        //var zustand = true;
+        var el = this.el,
+        assets = el.childNodes,
+        i = 0;
 
-
-        el.addEventListener('click', function () {
-            var neueAnimation = document.createElement('a-animation');
-            neueAnimation.setAttribute('attribute', 'position');
-            neueAnimation.setAttribute('from', '8 1.7 0.9');
-            neueAnimation.setAttribute('to', '12 1.7 0.9');
-            neueAnimation.setAttribute('dur', '8000');
-            el.appendChild(neueAnimation);
+        // Asset leuchten lassen
+        this.el.addEventListener('animationend', function() {
+            if(el.getAttribute('position').x == 8) {
+                //document.querySelector('#glow').emit('glowStart');
+                for (i = 0; i<=assets.length; i++) {
+                    if (assets[i]) assets[i].emit('glowStart');
+                }
+            }
+            //Kiste zerstören, wenn sie weggefahren ist
+            else if (el.getAttribute('position').x == 13) {
+                el.parentNode.removeChild(el);
+            }
         });
     }
 });
 
-AFRAME.registerComponent('assets', {
+AFRAME.registerComponent('assetclick', {
 
     init: function() {
         var el = this.el,
-            Animation_1 = document.createElement('a-animation');
-            Animation_2 = document.createElement('a-animation');
-            stempel = document.querySelector('#stempel');
+            stempel = document.querySelector('#stempel'),
+            stempelAnimation = document.querySelector('#stempelAnimation'),
+            stempelAnimationDown = document.querySelector('#stempelAnimationDown');
 
-        el.addEventListener('click', function () {
+        //Stempelanimation updaten
+        this.el.addEventListener('click', function () {
             var thisWorldPosition = el.object3D.getWorldPosition(),
                 thisXPosition = thisWorldPosition[Object.keys(thisWorldPosition)[0]],
-                thisYPosition = thisWorldPosition[Object.keys(thisWorldPosition)[1]],
                 thisZPosition = thisWorldPosition[Object.keys(thisWorldPosition)[2]];
 
+            stempelAnimation.setAttribute('from', stempel.getAttribute('position').x + ' ' + stempel.getAttribute('position').y + ' ' + stempel.getAttribute('position').z);
+            stempelAnimation.setAttribute('to', thisXPosition + ' 5.8 ' + thisZPosition);
+            stempelAnimationDown.setAttribute('from', thisXPosition + ' 5.8 ' + thisZPosition);
+            stempelAnimationDown.setAttribute('to', thisXPosition + ' 4.9 ' + thisZPosition);
+            stempelAnimation.emit('stempelStart');
+            stempelAnimationDown.emit('stempelStartDown');
+            el.parentEl.emit('crateVanish');
 
-            Animation_1.setAttribute('attribute', 'position');
-            Animation_1.setAttribute('from', stempel.getAttribute('position').x + ' ' + stempel.getAttribute('position').y + ' ' + stempel.getAttribute('position').z );
-            Animation_1.setAttribute('to', thisXPosition +  ' 5.8 ' +  thisZPosition);
-            Animation_1.setAttribute('dur', '800');
-            Animation_1.setAttribute('fill', 'both');
-            stempel.appendChild(Animation_1);
-            stempel.emit('firstAnimationend')
         });
+        //Falls es das richtige asset ist, leuchtanimation hinzufügen
+        if (el.getAttribute('class') == 'asset glow') {
+            var glowAnimation = document.createElement('a-animation'),
+                animationattributes = {
+                'id': 'glow',
+                'attribute': 'material.color',
+                'from': '#6d9292',
+                'to': '#33cccc',
+                'dur': '800',
+                'begin': 'glowStart',
+                'end': 'glowStop',
+                'direction': 'alternate',
+                'repeat': 'indefinite'
+            };
+            for (var animationProperty in animationattributes) {
+                glowAnimation.setAttribute(animationProperty, animationattributes[animationProperty]);
+            }
+            el.appendChild(glowAnimation);
+        }
 
-        /*stempel.addEventListener('firstAnimationend', function() {
-            var thisWorldPosition = el.object3D.getWorldPosition(),
-                thisXPosition = thisWorldPosition[Object.keys(thisWorldPosition)[0]],
-                thisYPosition = thisWorldPosition[Object.keys(thisWorldPosition)[1]],
-                thisZPosition = thisWorldPosition[Object.keys(thisWorldPosition)[2]];
-
-
-            Animation_2.setAttribute('attribute', 'position');
-            Animation_2.setAttribute('from', stempel.getAttribute('position').x + ' ' + stempel.getAttribute('position').y + ' ' + stempel.getAttribute('position').z );
-            Animation_2.setAttribute('to', thisXPosition + ' ' + thisYPosition + ' ' + thisZPosition);
-            Animation_2.setAttribute('dur', '800');
-            Animation_2.setAttribute('fill', 'both');
-            stempel.appendChild(Animation_2);
-        });*/
-
-        /*var followCamera = function() {
-            var camera = document.querySelector('#kamera').object3D.children[0];
-            vector = camera.getWorldDirection();
-            theta = Math.atan2(vector.x, vector.z);
-            el.setAttribute('position', vector);
-        }*/
     }
-
 });
 
+/*AFRAME.registerComponent('stempel', {
+
+    init: function() {
+        var el = this.el,
+            stempelDown = document.querySelector('#stempelAnimationDown');
+
+        this.el.addEventListener('animationend', function() {
+            var position = el.getAttribute('position').y;
+            if (position == 5.8) stempelDown.emit('stempelStartDown');
+
+        });
+    }
+});*/
