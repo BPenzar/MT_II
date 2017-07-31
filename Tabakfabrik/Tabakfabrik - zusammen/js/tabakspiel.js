@@ -205,7 +205,7 @@ AFRAME.registerComponent('kistenclick', {
                     anzahlKisten++;
                     punktezustand = false;
                 }
-                if(anzahlKisten == 2) document.querySelector('#textClick').emit('startGlow');
+                if(anzahlKisten > 9) document.querySelector('#textClick').emit('startGlow');
             }
         });
     }
@@ -275,7 +275,8 @@ AFRAME.registerComponent('texthandler', {
     init: function () {
         var el = this.el;
         var kamera = document.querySelector('#camera'),
-            glowyAnimation = document.createElement('a-animation');
+            glowyAnimation = document.createElement('a-animation'),
+            szene = document.querySelector('a-scene');
             animationattributes = {
                 'attribute': 'material.color',
                 'from': 'black',
@@ -292,9 +293,8 @@ AFRAME.registerComponent('texthandler', {
         el.appendChild(glowyAnimation);
 
         el.addEventListener('click', function () {
-            if(anzahlKisten == 2) {
                 kamera.setAttribute('position', '3.5 6 72' );
-            }
+                szene.removeAttribute('kistenspawn');
         });
 
     }
